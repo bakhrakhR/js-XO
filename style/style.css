@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(to bottom, #6abaf0, #f76a5b);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    color: #fff;
+    text-align: center;
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    font: 400 16px "Poppins", sans-serif;
+    padding-top: 150px;
+    letter-spacing: 1px;
+    outline: none;
+}
+
+button {
+    background-color: transparent;
+    padding: 10px;
+    margin: 10px;
+    cursor: pointer;
+    color: #fff;
+    font-size: 1.25rem;
+    border: 1px solid white;
+    -webkit-border-radius: 130px;
+    -webkit-border-top-right-radius: 0;
+    -moz-border-radius: 130px;
+    -moz-border-radius-topright: 0;
+    border-radius: 130px;
+    border-top-right-radius: 0;
+}
+
+.main-title {
+    font-size: 2.25rem;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+}
+
+.game {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.board {
+    display: flex;
+    width: 365px;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+    gap: 2px;
+}
+
+.cell {
+    border: 1px solid white;
+    cursor: pointer;
+    width: 120px;
+    height: 120px;
+}
+
+.res {
+    color: white;
+    font-weight: bold;
+    font-size: 2rem;
+    border: 1px solid white;
+    -webkit-border-radius: 130px;
+    -webkit-border-top-right-radius: 0;
+    -moz-border-radius: 130px;
+    -moz-border-radius-topright: 0;
+    border-radius: 130px;
+    border-top-right-radius: 0;
+    padding: 3px 15px;
+    margin-bottom: 15px;
+}
+
+.hide {
+    display: none;
+}
+
+.active {
+    background: rgba(95, 158, 230, 0.5);
+}
+
+.circle {
+    width: 100%;
+    height: 100%;
+    stroke-dasharray: 283;
+    stroke-dashoffset: 283;
+    stroke: #ccc;
+    animation: draw 0.5s forwards;
+}
+
+.cross {
+    width: 100%;
+    height: 100%;
+}
+
+.first {
+    stroke-dasharray: 125;
+    stroke-dashoffset: 125;
+    stroke: white;
+    animation: draw 0.4s forwards;
+}
+
+.second {
+    stroke-dasharray: 125;
+    stroke-dashoffset: 125;
+    stroke: white;
+    animation: draw 0.4s forwards;
+}
+
+
+@keyframes draw {
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+
+/* confetti */
+
+.confetti {
+    width: 10px;
+    height: 10px;
+    background-color: #f00;
+    /* Цвет конфетти */
+    position: absolute;
+    will-change: transform;
+    transform-origin: 0 0;
+    animation: confetti-fall 2s ease-out both;
+}
+
+/* Анимация для падения конфетти */
+@keyframes confetti-fall {
+    0% {
+        transform: translateY(0) rotate(0);
+    }
+
+    100% {
+        transform: translateY(100vh) rotate(360deg);
+    }
+}
